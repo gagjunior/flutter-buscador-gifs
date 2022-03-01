@@ -15,8 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String _search = '';
-  int _offset = 0;
+  final String _search = '';
+  final int _offset = 0;
 
   Future<Map> _getGifs() async {
     http.Response response;
@@ -50,8 +50,8 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
+          const Padding(
+            padding: EdgeInsets.all(10.0),
             child: TextField(
               decoration: InputDecoration(
                 labelText: "Pesquise aqui",
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                       width: 200.0,
                       height: 200.0,
                       alignment: Alignment.center,
-                      child: CircularProgressIndicator(
+                      child: const CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                         strokeWidth: 5.0,
                       ),
@@ -100,8 +100,8 @@ class _HomePageState extends State<HomePage> {
 
   Widget _createGifTable(BuildContext context, AsyncSnapshot snapshot) {
     return GridView.builder(
-      padding: EdgeInsets.all(10.0),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      padding: const EdgeInsets.all(10.0),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 10.0,
         mainAxisSpacing: 10.0,
